@@ -19,14 +19,9 @@ func main() {
 	c, python, java := true, false, "no!"
 	fmt.Println(c, python, java)
 	err := http.ListenAndServe(":80", nil)
-	// mux := http.NewServeMux()
-	// mux.HandleFunc("/", rootHandler)
-	// mux.HandleFunc("/healthz", healthz)
-	// mux.HandleFunc("/debug/pprof/", pprof.Index)
-	// mux.HandleFunc("/debug/pprof/profile", pprof.Profile)
-	// mux.HandleFunc("/debug/pprof/symbol", pprof.Symbol)
-	// mux.HandleFunc("/debug/pprof/trace", pprof.Trace)
-	// err := http.ListenAndServe(":80", mux)
+	mux := http.NewServeMux()
+	mux.HandleFunc("/", rootHandler)
+	mux.HandleFunc("/healthz", healthz)
 	if err != nil {
 		log.Fatal(err)
 	}

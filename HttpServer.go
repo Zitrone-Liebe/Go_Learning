@@ -40,7 +40,7 @@ func rootHandler(w http.ResponseWriter, r *http.Request) {
 	} else {
 		io.WriteString(w, "hello [stranger]\n")
 	}
-	io.WriteString(w, "===================Details of the http request header:============\n")
+	io.WriteString(w, "=====Http request header details:=====\n")
 	for k, v := range r.Header {
 		io.WriteString(w, fmt.Sprintf("%s=%s\n", k, v))
 	}
